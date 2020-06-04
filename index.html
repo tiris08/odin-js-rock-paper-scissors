@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <script>
+
+    let options = ['Rock', 'Paper', 'Scissors'];
+    
+
+    
+    function game() {
+       
+            function computerPlay() {
+        const choice = options[Math.floor(Math.random() * options.length)];
+        return choice;
+        }
+    
+
+        function playRound(playerSelection, computerSelection){
+        let player = playerSelection.toLowerCase();   
+            if (player === 'rock'){
+                if (computerSelection === 'Paper') {
+                    return -1;
+                } else if (computerSelection === 'Scissors') {
+                    return 1;
+                } else if (computerSelection === 'Rock') {
+                    return 0;
+                }  
+            } else if (player === 'scissors') {
+                if (computerSelection === 'Paper') {
+                    return 1;
+                } else if (computerSelection === 'Scissors') {
+                    return 0;
+                } else if (computerSelection === 'Rock') {
+                    return -1;
+                }
+            } else if (player === 'paper') {
+                if (computerSelection === 'Paper') {
+                    return 0;
+                } else if (computerSelection === 'Scissors') {
+                    return -1;
+                } else if (computerSelection === 'Rock') {
+                    return 1;
+                }
+            } 
+        }
+        const playerSelection1 = prompt('Do you want to play "ROCK PAPER SCISSORS?" game\n'+
+        'then just pick your choice, type it and press OK to strat Round 1');
+        const computerSelection1 = computerPlay();
+        let round1 = playRound(playerSelection1, computerSelection1) 
+        let pscore;
+        let cscore;
+        if (round1 === 0) {
+            pscore = 0;
+            cscore = 0;
+            console.log('Round 1: It\'s a draw\n' +
+            'You ' + pscore + '-' + cscore + ' Computer');
+        }else if (round1 === -1){
+            pscore = 0;
+            cscore = 1;
+            console.log('Round 1: You lost\n' +
+                'You ' + pscore + '-' + cscore + ' Computer');
+        }else if (round1 === 1) {
+            pscore = 1;
+            cscore = 0;
+            console.log('Round 1: You won\n' +
+                'You ' + pscore + '-' + cscore + ' Computer');
+        }
+        const playerSelection2 = prompt('Round 2');
+        const computerSelection2 = computerPlay();
+        let pscore2;
+        let cscore2;
+        let round2 = playRound(playerSelection2, computerSelection2);
+        if (round2 === 0) {
+            pscore2 = 0;
+            cscore2 = 0;
+            console.log('Round 2: It\'s a draw\n' +
+                'You ' + (pscore2 + pscore) + '-' + (cscore2 + cscore) + ' Computer');
+        } else if (round2 === -1) {
+            pscore2 = 0;
+            cscore2 = 1;
+            console.log('Round 2: You lost\n' +
+                'You ' + (pscore2 + pscore) + '-' + (cscore2 + cscore) + ' Computer');
+        } else if (round2 === 1) { 
+            pscore2 = 1;
+            cscore2 = 0;
+            console.log('Round 2: You won\n' +
+                'You ' + (pscore2 + pscore) + '-' + (cscore2 + cscore) + ' Computer');
+        }
+        const playerSelection3 = prompt('Round 3');
+        const computerSelection3 = computerPlay();
+        let round3 = playRound(playerSelection3, computerSelection3);
+        let pscore3;
+        let cscore3;  
+        if (round3 === 0) {
+            pscore3 = 0;
+            cscore3 = 0;
+            console.log('Round 3: It\'s a draw\n' +
+                'You ' + (pscore2 + pscore + pscore3) + '-' + 
+                (cscore2 + cscore + cscore3) + ' Computer');
+        } else if (round3 === -1) {
+            pscore3 = 0;
+            cscore3 = 1;
+            console.log('Round 3: You lost\n' +
+                'You ' + (pscore2 + pscore + pscore3) + '-' + 
+                (cscore2 + cscore + cscore3) + ' Computer');
+        } else if (round3 === 1) { 
+            pscore3 = 1;
+            cscore3 = 0;
+            console.log('Round 3: You won\n' +
+                'You ' + (pscore2 + pscore + pscore3) + '-' + 
+                (cscore2 + cscore + cscore3) + ' Computer');
+        }
+        const playerSelection4 = prompt('Round 4');
+        const computerSelection4 = computerPlay();
+        let round4 = playRound(playerSelection4, computerSelection4);
+        let pscore4;
+        let cscore4;  
+        if (round4 === 0) {
+            pscore4 = 0;
+            cscore4 = 0;
+            console.log('Round 4: It\'s a draw\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4) + ' Computer');
+        } else if (round4 === -1) {
+            pscore4 = 0;
+            cscore4 = 1;
+            console.log('Round 4: You lost\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4) + ' Computer');
+        } else if (round4 === 1) { 
+            pscore4 = 1;
+            cscore4 = 0;
+            console.log('Round 4: You won\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4) + ' Computer');
+        }
+        const playerSelection5 = prompt('Final Round');
+        const computerSelection5 = computerPlay();
+        let round5 = playRound(playerSelection5, computerSelection5);
+        let pscore5;
+        let cscore5;  
+        if (round5 === 0) {
+            pscore5 = 0;
+            cscore5 = 0;
+            console.log('Round 5: It\'s a draw\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4 + pscore5) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4 + cscore5) + ' Computer');
+        } else if (round5 === -1) {
+            pscore5 = 0;
+            cscore5 = 1;
+            console.log('Round 5: You lost\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4 + pscore5) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4 + cscore5) + ' Computer');
+        } else if (round5 === 1) { 
+            pscore5 = 1;
+            cscore5 = 0;
+            console.log('Round 5: You won\n' +
+                'You ' + (pscore2 + pscore + pscore3 + pscore4 + pscore5) + '-' + 
+                (cscore2 + cscore + cscore3 + cscore4 + cscore5) + ' Computer');
+        }
+    
+        let playerResult = (pscore2 + pscore + pscore3 + pscore4 + pscore5);
+        let compResult = (cscore2 + cscore + cscore3 + cscore4 + cscore5);
+        if (playerResult > compResult) {
+           alert('Congrats! You won the game. Here is the score:\n' +
+           'You ' + playerResult + '-' + compResult + ' Computer');
+        } else if (playerResult < compResult) {
+           alert('You lost it! The luck was not on your side. Here is the score:\n' +
+           'You ' + playerResult + '-' + compResult + ' Computer');
+        }else {
+           alert('It\'s a draw! Not bad at least you didn\'t lose. Here is the score:\n' +
+          'You ' + playerResult + '-' + compResult + ' Computer');
+        }
+    }
+    console.log(game())
+    </script>
+</html>
